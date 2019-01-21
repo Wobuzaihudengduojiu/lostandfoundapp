@@ -1,0 +1,15 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view class='info'>
+      <text bindtap='jumpmyrelease'space="ensp" > 我的发布    </text>
+      <text bindtap='jumpprivateletter'space="ensp" >我的私信    </text>
+      <text bindtap='jumpmyaboutus' space="ensp">  关于</text>
+    </view>
+  </view>
+</view>
